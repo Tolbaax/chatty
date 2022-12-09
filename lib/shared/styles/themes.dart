@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_app/shared/styles/colors.dart';
 
 ThemeData light = ThemeData(
   primaryColor: AppColors.darkBlue,
   appBarTheme: AppBarTheme(
-    toolbarHeight: 42.h,
     backgroundColor: Colors.white,
     elevation: 0.0,
     systemOverlayStyle: SystemUiOverlayStyle(

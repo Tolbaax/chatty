@@ -17,8 +17,8 @@ import 'package:timeago/timeago.dart' as timeago;
 void main() async {
   // make sure that everything in methode is finished, then open the app
   WidgetsFlutterBinding.ensureInitialized();
-  LocalNotificationService.initialize();
   await Firebase.initializeApp();
+  LocalNotificationService.initialize();
   await CacheHelper.init();
   Bloc.observer = MyBlocObserver();
   timeago.setLocaleMessages('en', timeago.EnShortMessages());

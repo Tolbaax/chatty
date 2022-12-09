@@ -1,29 +1,34 @@
 class ChatModel {
   String? senderId;
   String? receiverId;
-  var time;
   String? text;
+  List? messageImage;
+  var time;
 
   ChatModel({
     required this.senderId,
     required this.receiverId,
-    required this.time,
     required this.text,
+    required this.messageImage,
+    required this.time,
   });
 
   ChatModel.fromJson(Map<String, dynamic>? json) {
     senderId = json!['senderID'];
     receiverId = json['receiverID'];
-    time = json['time'];
     text = json['text'];
+    messageImage = json['messageImage'];
+    time = json['time'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['senderID'] = senderId;
     data['receiverID'] = receiverId;
-    data['time'] = time;
     data['text'] = text;
+    data['messageImage'] = messageImage;
+    data['time'] = time;
+
     return data;
   }
 }
