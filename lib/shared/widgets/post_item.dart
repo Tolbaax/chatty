@@ -3,10 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:social_app/modules/settings/cubit/cubit.dart';
 import 'package:social_app/shared/resources/global.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -256,22 +253,14 @@ class _BuildPostItemState extends State<BuildPostItem> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.bottomToTop,
-                            curve: Curves.easeInExpo,
-                            child: MultiBlocProvider(
-                              providers: [
-                                BlocProvider(create: (context) => FeedsCubit()),
-                                BlocProvider(
-                                    create: (context) =>
-                                        SettingsCubit()..getUserData()),
-                              ],
-                              child: CommentsScreen(
-                                index: widget.index,
-                                snapshot: widget.snapshot,
-                              ),
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (context) => SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.91,
+                            child: CommentsScreen(
+                              snapshot: widget.snapshot,
+                              index: widget.index,
                             ),
                           ),
                         );

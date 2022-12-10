@@ -262,7 +262,7 @@ class ChatDetailsScreen extends StatelessWidget {
                                           messageController.clear();
                                         }
                                       } else {
-                                        if (messageController.text.isNotEmpty) {
+                                        if (cubit.chatImage != null) {
                                           cubit
                                               .sendMessageWithImages(
                                             receiverId: userModel.uID!,
@@ -273,7 +273,10 @@ class ChatDetailsScreen extends StatelessWidget {
                                             await LocalNotificationService
                                                 .sendNotification(
                                               title: '${currentUser!.name}',
-                                              message: message,
+                                              message:
+                                                  messageController.text.isEmpty
+                                                      ? 'Image..'
+                                                      : message,
                                               token: fcmToken,
                                             );
                                             messageController.clear();

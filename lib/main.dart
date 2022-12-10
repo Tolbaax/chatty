@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_app/layout/cubit/cubit.dart';
 import 'package:social_app/modules/chats/cubit/cubit.dart';
+import 'package:social_app/modules/feeds/cubit/cubit.dart';
 import 'package:social_app/modules/post/cubit/cubit.dart';
 import 'package:social_app/modules/settings/cubit/cubit.dart';
 import 'package:social_app/modules/splash/splash_screen.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LayoutCubit()..getUserData()),
+        BlocProvider(create: (context) => FeedsCubit()..getPosts()),
         BlocProvider(create: (context) => AddPostCubit()..getUserData()),
         BlocProvider(create: (context) => ChatsCubit()..getUsers()),
         BlocProvider(create: (context) => SettingsCubit()..getUserData()),
