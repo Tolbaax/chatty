@@ -9,7 +9,6 @@ import 'package:social_app/layout/cubit/states.dart';
 import 'package:social_app/modules/login/login_screen.dart';
 import 'package:social_app/modules/notifications/notifications_screen.dart';
 import 'package:social_app/modules/post/add_post_screen.dart';
-import 'package:social_app/modules/search/search_screen.dart';
 import 'package:social_app/network/services/notification_service.dart';
 import 'package:social_app/shared/widgets/buttons.dart';
 import 'package:social_app/shared/widgets/navigation.dart';
@@ -64,13 +63,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
                 icon: const Icon(Icons.notifications_active_outlined),
                 splashRadius: 20.0.sp,
               ),
-              IconButton(
-                onPressed: () {
-                  navigateTo(context, const SearchScreen());
-                },
-                icon: const Icon(Icons.search),
-                splashRadius: 20.sp,
-              ),
               if (cubit.currentIndex == 3) const SignOut(),
             ],
           ),
@@ -109,7 +101,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
                       }),
                   BottomTabBar(
                       index: 1,
-                      icon: CupertinoIcons.chat_bubble_text_fill,
+                      icon: CupertinoIcons.search,
                       onPressed: (index) {
                         cubit.changeBottomNav(index);
                       }),
@@ -117,7 +109,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     padding: EdgeInsets.only(left: 65.w),
                     child: BottomTabBar(
                         index: 2,
-                        icon: CupertinoIcons.person_3_fill,
+                        icon: CupertinoIcons.chat_bubble_text_fill,
                         onPressed: (index) {
                           cubit.changeBottomNav(index);
                         }),

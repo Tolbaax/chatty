@@ -26,19 +26,6 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 75.h,
-        leadingWidth: 30.w,
-        leading: Center(
-          child: Padding(
-            padding: EdgeInsetsDirectional.only(start: 10.sp),
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios),
-            ),
-          ),
-        ),
         title: DefaultTextFormFiled(
           controller: searchController,
           prefixIcon: const Icon(Icons.search),

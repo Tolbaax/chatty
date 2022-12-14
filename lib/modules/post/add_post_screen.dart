@@ -41,10 +41,13 @@ class AddPostScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: const Icon(Icons.arrow_back_ios)),
+                icon: const Icon(Icons.arrow_back_ios),color: AppColors.grayRegular,),
             titleSpacing: 0.0,
             title: const Text(
               'Create Post',
+              style: TextStyle(
+                color: AppColors.grayRegular,
+              ),
             ),
             actions: [
               TextButton(

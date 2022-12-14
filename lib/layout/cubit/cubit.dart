@@ -8,10 +8,10 @@ import 'package:social_app/layout/cubit/states.dart';
 import 'package:social_app/modules/chats/chats_screen.dart';
 import 'package:social_app/modules/feeds/feeds_screen.dart';
 import 'package:social_app/modules/settings/settings_screen.dart';
-import 'package:social_app/modules/users/users_screen.dart';
 import 'package:social_app/shared/lcoal/cache_helper.dart';
 import 'package:social_app/shared/resources/global.dart';
 
+import '../../modules/search/search_screen.dart';
 import '../../network/models/user_model.dart';
 
 class LayoutCubit extends Cubit<LayoutStates> {
@@ -22,15 +22,15 @@ class LayoutCubit extends Cubit<LayoutStates> {
   int currentIndex = 0;
   List<Widget> screens = [
     const FeedsScreen(),
+    const SearchScreen(),
     const ChatsScreen(),
-    const UsersScreen(),
     const SettingsScreen(),
   ];
 
   List<String> titles = [
     'Chatty',
+    'Search',
     'Chats',
-    'Users',
     'Settings',
   ];
   void changeBottomNav(int index) {

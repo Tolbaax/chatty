@@ -16,7 +16,6 @@ import 'package:social_app/shared/styles/themes.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 void main() async {
-  // make sure that everything in methode is finished, then open the app
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   LocalNotificationService.initialize();

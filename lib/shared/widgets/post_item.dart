@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:social_app/shared/resources/global.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -253,14 +254,14 @@ class _BuildPostItemState extends State<BuildPostItem> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          builder: (context) => SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.91,
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.bottomToTop,
+                            curve: Curves.easeInExpo,
                             child: CommentsScreen(
-                              snapshot: widget.snapshot,
                               index: widget.index,
+                              snapshot: widget.snapshot,
                             ),
                           ),
                         );

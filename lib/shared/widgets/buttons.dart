@@ -106,7 +106,7 @@ class BottomTabBar extends StatelessWidget {
           if (LayoutCubit.get(context).currentIndex == index)
             Container(
               height: 1.h,
-              width: 18.w,
+              width: 20.w,
               decoration: const BoxDecoration(
                 color: AppColors.tealBlue,
               ),

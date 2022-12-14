@@ -9,8 +9,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 
 class LocalNotificationService {
-  static String serverKey =
-      "AAAAh3bZ-J4:APA91bGT2F1HavsWAJUrOBtazuYAxq0glO9xToWkzeEZzFs27LgYMyymeuUSF9NSWaZVzcgM-PPSlgFPxHjh64G-pDv41g0cTANT1oMdAu9easrQNerugzQThyIqkniKKePzaQm7kaqH";
+  static String serverKey = "";
 
   static final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();

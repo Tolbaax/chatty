@@ -21,12 +21,18 @@ class CommentsScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+          color: AppColors.grayRegular,
+        ),
         title: const Text(
           'Comments',
           style: TextStyle(color: AppColors.grayRegular),
         ),
-        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.0.sp, vertical: 10.0.sp),

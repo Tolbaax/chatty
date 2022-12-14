@@ -87,7 +87,6 @@ class ChatDetailsScreen extends StatelessWidget {
                           return Expanded(
                             child: ListView.separated(
                               controller: scrollController,
-                              physics: const BouncingScrollPhysics(),
                               itemBuilder: (context, index) {
                                 var message = cubit.messages[index];
                                 if (uId == message.senderId) {
@@ -106,19 +105,20 @@ class ChatDetailsScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        fallback: (context) => Center(
-                          child: Column(
-                            children: [
-                              Lottie.asset(ImageAssets.noMessages),
-                              SizedBox(
-                                height: 30.h,
-                              ),
-                              Text(
-                                'No messages here yet',
-                                style: TextStyle(fontSize: 18.sp),
-                              ),
-                            ],
-                          ),
+                        fallback: (context) => Column(
+                          children: [
+                            SizedBox(
+                              height: 110.h,
+                            ),
+                            Lottie.asset(ImageAssets.noMessages),
+                            SizedBox(
+                              height: 30.h,
+                            ),
+                            Text(
+                              'No messages here yet',
+                              style: TextStyle(fontSize: 18.sp),
+                            ),
+                          ],
                         ),
                       ),
                       if (cubit.chatImage != null &&
@@ -368,7 +368,7 @@ class SenderMessage extends StatelessWidget {
                 itemCount: chatModel.messageImage!.length,
               ),
             ),
-          )
+          ),
       ],
     );
   }
@@ -436,7 +436,7 @@ class ReceiverMessage extends StatelessWidget {
                 itemCount: chatModel.messageImage!.length,
               ),
             ),
-          )
+          ),
       ],
     );
   }
